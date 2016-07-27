@@ -18,6 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".CanteensListActivity"
+            android:label="Lis of Canteens"
+            android:uiOptions="splitActionBarWhenNarrow">
+        </activity>
+
     </application>
 
 </manifest>
