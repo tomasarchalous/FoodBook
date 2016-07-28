@@ -1,5 +1,5 @@
-id,name,price
-1,burger,13.34
-2,maso,24
-3,spagety,57
-4,spagety,12
+id, name,   price   ,calories,proteins,fats,sugar,vegetarian,vegan,glutenFree,canteenId,imageId
+1,  burger, 13.34   ,234,    321,       333,666,       1,      1,0,123,34567
+2,  maso,   24,234  ,321,333,666,1,1,0,2,34567
+3,  spagety,57,234  ,321,333,666,1,1,0,2,34567
+4,  spagety,12,234  ,321,333,666,1,1,0,123,34567

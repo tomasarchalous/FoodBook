@@ -34,11 +34,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         CsvHelper csvHelper = new CsvHelper(MainActivity.this);
-        System.out.println("ahoj");
+//        System.out.println("ahoj");
+//
+//        csvHelper.getCanteens();
+//        csvHelper.getFoods();
 
-csvHelper.getCanteens();
-        csvHelper.getFoods();
-
+        csvHelper.getFoodsOfCanteen(2);
 
     }
 

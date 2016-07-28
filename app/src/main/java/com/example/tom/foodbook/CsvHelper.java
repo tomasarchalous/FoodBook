@@ -96,6 +96,26 @@ public class CsvHelper {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
         return foods;
     }
+
+    /**
+     * Returns ArrayList of food server in canteen in input parameter
+     *
+     * @param canteenId
+     * @return
+     */
+    public ArrayList<Food> getFoodsOfCanteen(int canteenId) {
+        ArrayList<Food> foodsOfCanteen = new ArrayList<>();
+        ArrayList<Food> allFoods = this.getFoods();
+        for (Food food : allFoods) {
+            if (food.getCanteenId() == canteenId) {
+                foodsOfCanteen.add(food);
+            }
+        }
+        return foodsOfCanteen;
+    }
+
 }
