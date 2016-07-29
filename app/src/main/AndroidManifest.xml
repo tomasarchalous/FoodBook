@@ -22,7 +22,11 @@
         <activity
             android:name=".CanteensListActivity"
             android:label="Lis of Canteens"
-            android:uiOptions="splitActionBarWhenNarrow">
+            android:uiOptions="splitActionBarWhenNarrow"></activity>
+
+        <activity
+            android:name=".CleverFilterActivity"
+            android:label="Clever filter of Food">
         </activity>
 
     </application>

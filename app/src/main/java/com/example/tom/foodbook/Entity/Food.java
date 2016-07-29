@@ -1,4 +1,4 @@
-package com.example.tom.foodbook;
+package com.example.tom.foodbook.Entity;
 
 public class Food {
 
@@ -28,6 +28,10 @@ public class Food {
         this.glutenFree = glutenFree;
         this.canteenId = canteenId;
         this.imageId = imageId;
+    }
+
+    public Food(String name) {
+        this.name = name;
     }
 
     public int getId() {
