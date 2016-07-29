@@ -18,17 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".CanteensListActivity"
             android:label="Lis of Canteens"
-            android:uiOptions="splitActionBarWhenNarrow"></activity>
-
+            android:uiOptions="splitActionBarWhenNarrow" />
         <activity
             android:name=".CleverFilterActivity"
-            android:label="Clever filter of Food">
-        </activity>
-
+            android:label="Clever filter of Food" />
+        <activity android:name=".canteen_overview" />
+        <activity android:name=".canteen_layout"></activity>
     </application>
 
 </manifest>
