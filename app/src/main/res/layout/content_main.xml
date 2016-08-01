@@ -24,19 +24,25 @@
         android:id="@+id/btnListOfCanteens"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="List of Canteens" />
+        android:text="List of Canteens"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button1"/>
 
     <Button
         android:id="@+id/btnCleverFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Run Clever filter" />
+        android:text="Run Clever filter"
+        android:background="@drawable/button1"
+        android:layout_marginTop="8dp"/>
 
     <Button
         android:id="@+id/recommendValues"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recommended Values" />
+        android:text="Recommended Values"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button1"/>
 
 
 </LinearLayout>
