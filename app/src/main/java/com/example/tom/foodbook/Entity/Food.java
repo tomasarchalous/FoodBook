@@ -13,10 +13,9 @@ public class Food {
     private boolean vegan;
     private boolean glutenFree;
     private int canteenId;
-    private int imageId;
     private boolean markFlag;
 
-    public Food(int id, String name, double price, int calories, int proteins, int fats, int sugar, boolean vegetarian, boolean vegan, boolean glutenFree, int canteenId, int imageId) {
+    public Food(int id, String name, double price, int calories, int proteins, int fats, int sugar, boolean vegetarian, boolean vegan, boolean glutenFree, int canteenId) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -28,7 +27,6 @@ public class Food {
         this.vegan = vegan;
         this.glutenFree = glutenFree;
         this.canteenId = canteenId;
-        this.imageId = imageId;
     }
 
     public Food(String name, double price, int calories, int proteins, int fats, int sugar) {
@@ -126,14 +124,6 @@ public class Food {
 
     public void setCanteenId(int canteenId) {
         this.canteenId = canteenId;
-    }
-
-    public int getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
     }
 
     public boolean isMarkFlag() {

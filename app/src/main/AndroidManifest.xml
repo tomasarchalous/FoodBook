@@ -18,6 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".CanteensListActivity"
             android:label="List of Canteens"
@@ -25,11 +26,15 @@
         <activity
             android:name=".CleverFilterActivity"
             android:label="Clever filter of Food" />
-        <activity android:name=".canteen_overview" />
-        <activity android:name=".canteen_layout"></activity>
         <activity
             android:name=".NutritionFormActivity"
             android:label="Nutrition values form" />
+        <activity
+            android:name=".CanteenOverviewActivity"
+            android:label="overview of all canteens" />
+        <activity
+            android:name=".BMI"
+            android:label="BMI calculator" />
     </application>
 
 </manifest>

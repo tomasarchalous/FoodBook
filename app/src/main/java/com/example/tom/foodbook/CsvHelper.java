@@ -24,7 +24,6 @@ public class CsvHelper {
      * @return ArrayList<Canteen>
      */
     public ArrayList<Canteen> getCanteens() {
-        System.out.println("funkce");
         ArrayList<Canteen> canteens = new ArrayList<>();
         try {
 
@@ -35,17 +34,15 @@ public class CsvHelper {
             while (products.readRecord()) {
                 int id = Integer.parseInt(products.get("id"));
                 String name = products.get("name");
-
                 double latitude = Double.parseDouble(products.get("latitude"));
                 double longitude = Double.parseDouble(products.get("longitude"));
                 String building = products.get("building");
                 String description = products.get("description");
-                int imageId = Integer.parseInt(products.get("imageId"));
 
-                Canteen canteen = new Canteen(id, name, latitude, longitude, building, description, imageId);
+                Canteen canteen = new Canteen(id, name, latitude, longitude, building, description);
                 canteens.add(canteen);
 
-                System.out.println(id + ":" + name);
+                // System.out.println(id + ":" + name);
             }
 
             products.close();
@@ -64,9 +61,7 @@ public class CsvHelper {
     public ArrayList<Food> getFoods() {
         ArrayList<Food> foods = new ArrayList<>();
         try {
-
             CsvReader products = new CsvReader(new InputStreamReader(myContext.getAssets().open("food.csv")));
-
             products.readHeaders();
 
             while (products.readRecord()) {
@@ -81,13 +76,11 @@ public class CsvHelper {
                 boolean vegan = products.get("vegan") == "1" ? true : false;
                 boolean glutenFree = products.get("glutenFree") == "1" ? true : false;
                 int canteenId = Integer.parseInt(products.get("canteenId"));
-                int imageId = Integer.parseInt(products.get("imageId"));
 
-                Food food = new Food(id, name, price, calories, proteins, fats, sugar, vegetarian, vegan, glutenFree, canteenId, imageId);
-
+                Food food = new Food(id, name, price, calories, proteins, fats, sugar, vegetarian, vegan, glutenFree, canteenId);
                 foods.add(food);
 
-                System.out.println(id + ":" + name + price);
+                //  System.out.println(id + ":" + name + price);
             }
 
             products.close();
@@ -107,6 +100,8 @@ public class CsvHelper {
      * @return
      */
     public ArrayList<Food> getFoodsOfCanteen(int canteenId) {
+
+
         ArrayList<Food> foodsOfCanteen = new ArrayList<>();
         ArrayList<Food> allFoods = this.getFoods();
         for (Food food : allFoods) {
@@ -114,7 +109,24 @@ public class CsvHelper {
                 foodsOfCanteen.add(food);
             }
         }
+
         return foodsOfCanteen;
+    }
+
+    public Canteen getCanteenByID(int id) {
+        Canteen canteen = new Canteen();
+        ArrayList<Canteen> canteens = this.getCanteens();
+
+
+        for (Canteen c : canteens) {
+            if (c.getId() == id) {
+                canteen = c;
+            }
+        }
+
+
+
+        return canteen;
     }
 
 }

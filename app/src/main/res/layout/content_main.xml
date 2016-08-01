@@ -4,26 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.tom.foodbook.MainActivity"
-    tools:showIn="@layout/activity_main"
-    android:orientation="vertical">
+    tools:showIn="@layout/activity_main">
 
     <TextView
         android:id="@+id/tvDashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-        android:text="FoodBook" />
+        android:text="FoodBook"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+    <Button
+        android:id="@+id/btnListOfCanteens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Canteens"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button1"/>
 
     <Button
         android:id="@+id/btnCleverFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Run Clever filter" />
+        android:text="Run Clever filter"
+        android:background="@drawable/button1"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/recommendValues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recommended Values"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button1"/>
+
 
 </LinearLayout>
