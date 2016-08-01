@@ -21,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvDashboard;
-    private Button btnCleverFitler;
+    private Button btnCleverFitler,btnrecommendValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnrecommendValues = (Button)findViewById(R.id.recommendValues);
+        btnrecommendValues.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View view){
+                startActivity(new Intent(MainActivity.this,BMI.class));
+            }
+        });
         CsvHelper csvHelper = new CsvHelper(MainActivity.this);
 //        System.out.println("ahoj");
 //
@@ -72,4 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    //jump to BMI caculation
+
+
 }
