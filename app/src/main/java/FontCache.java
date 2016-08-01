@@ -1,0 +1,28 @@
+import android.content.Context;
+import android.graphics.Typeface;
+
+import java.util.Hashtable;
+
+/**
+ * Created by Blair on 2016/8/1.
+ * Here's the FontCache to reduce memory usage on older devices
+ */
+public class FontCache {
+
+    private static Hashtable<String, Typeface> fontCache = new Hashtable<String, Typeface>();
+
+    public static Typeface get(String name, Context context) {
+        Typeface tf = fontCache.get(name);
+        if(tf == null) {
+            try {
+                tf = Typeface.createFromAsset(context.getAssets(), name);
+            }
+            catch (Exception e) {
+                return null;
+            }
+            fontCache.put(name, tf);
+        }
+        return tf;
+    }
+
+}
