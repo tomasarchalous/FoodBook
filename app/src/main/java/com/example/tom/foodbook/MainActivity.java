@@ -21,8 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvDashboard;
-    private Button btnCleverFitler;
-    private Button btnListOfCanteens;
+    private Button btnCleverFitler,btnCalculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,24 +41,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnListOfCanteens = (Button) findViewById(R.id.btnListOfCanteens);
-        btnListOfCanteens.setOnClickListener(new View.OnClickListener() {
+        CsvHelper csvHelper = new CsvHelper(MainActivity.this);
+//        System.out.println("ahoj");
+//
+//        csvHelper.getCanteens();
+//        csvHelper.getFoods();
+
+        csvHelper.getFoodsOfCanteen(2);
+
+        btnCalculator = (Button) findViewById(R.id.recommendValues);
+        btnCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), CanteensListActivity.class);
+                Intent intent = new Intent(getBaseContext(), BMI.class);
                 startActivity(intent);
             }
         });
-
-
-
-//        CsvHelper csvHelper = new CsvHelper(MainActivity.this);
-////        System.out.println("ahoj");
-////
-////        csvHelper.getCanteens();
-////        csvHelper.getFoods();
-//
-//        csvHelper.getFoodsOfCanteen(2);
 
     }
 
