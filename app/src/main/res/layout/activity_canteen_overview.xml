@@ -14,14 +14,12 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="1dp"
-        >
+        android:layout_margin="1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,6 +34,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/img_canteen"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/canteen_1" />
@@ -53,7 +52,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
-                        android:text="canteen name:" />
+                        android:text="Canteen name" />
+
+                    <TextView
+                        android:id="@+id/tv_building_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Building name" />
 
                     <TextView
                         android:id="@+id/descriptionOfCanteen"
@@ -82,8 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="1dp"
-        android:layout_weight="1"
-        >
+        android:layout_weight="1">
 
         <android.support.v4.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
