@@ -52,7 +52,7 @@ public class BMI extends AppCompatActivity {
     public String createSummary(double BMI){
         String summary = "Your BMI value is: " + BMI;
         if (BMI <= 18.5)    summary += "\nYou are underweight!";
-        else if (BMI < 25 && BMI > 18.5 ) summary += "\nYou have normal weight!";
+        else if (BMI < 25 && BMI > 18.5 ) summary += "\nCongratulations! You have normal weight!";
         else if (BMI >=25 && BMI <30)   summary += "\nYou are overweight!";
         else if (BMI >= 30) summary += "\nYou are obesity!";
         else    summary += "\nAre you sure about your input weight and heght?";
