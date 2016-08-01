@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnCleverFitler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), CleverFilterActivity.class);
+                Intent intent = new Intent(getBaseContext(), NutritionFormActivity.class);
                 startActivity(intent);
             }
         });

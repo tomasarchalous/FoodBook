@@ -1,4 +1,4 @@
-package com.example.tom.foodbook;
+package com.example.tom.foodbook.Entity;
 
 public class Canteen {
 

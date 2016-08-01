@@ -1,13 +1,11 @@
 package com.example.tom.foodbook;
 
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 
+import com.example.tom.foodbook.Entity.Canteen;
 import com.example.tom.foodbook.Entity.Food;
 
-import java.io.FileReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
