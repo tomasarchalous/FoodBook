@@ -20,12 +20,14 @@ public class OfferFoodAdapter extends RecyclerView.Adapter<OfferFoodAdapter.View
 
     public static final String MIBA_TAG = "MIBA_TAG";
 
+    private ViewHolder.ClickListener clickListener;
     private List<Food> foodList;
 
     // inicialization of adapter
     // pass food data through Constructor on Activity load
-    public OfferFoodAdapter(List<Food> foodList) {
+    public OfferFoodAdapter(List<Food> foodList, ViewHolder.ClickListener clickListener) {
         this.foodList = foodList;
+        this.clickListener = clickListener;
     }
 
     public void setData(List<Food> foodList) {
@@ -38,7 +40,7 @@ public class OfferFoodAdapter extends RecyclerView.Adapter<OfferFoodAdapter.View
     @Override
     public OfferFoodAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_offer_food, parent, false);
-        return new ViewHolder(itemView);
+        return new ViewHolder(itemView, clickListener);
     }
 
     @Override
@@ -46,6 +48,11 @@ public class OfferFoodAdapter extends RecyclerView.Adapter<OfferFoodAdapter.View
         Food food = foodList.get(position);
 
         holder.name.setText(food.getName());
+        holder.calories.setText(food.getCalories() + " kCal");
+        holder.price.setText("Price: " + food.getPrice() + " HKD");
+        holder.proteins.setText("Proteins: " + food.getProteins() + " g");
+        holder.fat.setText("Fats: " + food.getFats() + " g");
+        holder.sugar.setText("Sugar: " + food.getSugar() + " g");
     }
 
     @Override
@@ -60,16 +67,29 @@ public class OfferFoodAdapter extends RecyclerView.Adapter<OfferFoodAdapter.View
     // representation of one row of RecycleView
     public static class ViewHolder extends RecyclerView.ViewHolder implements AdapterView.OnClickListener {
 
-        public TextView name;
+        private ViewHolder.ClickListener clickListener;
+        private TextView name, price, calories, fat, sugar, proteins;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, ClickListener listener) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.tv_food_name);
+            price = (TextView) itemView.findViewById(R.id.tv_food_price);
+            calories = (TextView) itemView.findViewById(R.id.tv_food_calories);
+            proteins = (TextView) itemView.findViewById(R.id.tv_food_proteins);
+            fat = (TextView) itemView.findViewById(R.id.tv_food_fats);
+            sugar = (TextView) itemView.findViewById(R.id.tv_food_sugar);
+
+            clickListener = listener;
+            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
+            clickListener.onItemClick(getAdapterPosition());
+        }
 
+        public interface ClickListener {
+            void onItemClick(int position);
         }
     }
 
