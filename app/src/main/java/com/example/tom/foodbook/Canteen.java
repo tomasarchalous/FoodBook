@@ -8,16 +8,14 @@ public class Canteen {
     private double longitude;
     private String building;
     private String description;
-    private int imageId;
 
-    public Canteen(int id, String name, double latitude, double longitude, String building, String description, int imageId) {
+    public Canteen(int id, String name, double latitude, double longitude, String building, String description) {
         this.id = id;
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
         this.building = building;
         this.description = description;
-        this.imageId = imageId;
     }
 
     public int getId() {
@@ -68,11 +66,4 @@ public class Canteen {
         this.description = description;
     }
 
-    public int getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
-    }
 }

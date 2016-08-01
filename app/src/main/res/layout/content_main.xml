@@ -26,4 +26,10 @@
         android:layout_height="wrap_content"
         android:text="Run Clever filter" />
 
+    <Button
+        android:id="@+id/btnListOfCanteens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Canteens" />
+
 </LinearLayout>

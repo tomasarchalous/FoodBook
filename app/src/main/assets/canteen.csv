@@ -1,5 +1,5 @@
-id;name
-1;C1
-2;AC2
-3;uKoleji
-
+id,name,latitude,longitude,building,description
+1,AC1,22.336170, 114.173159 ,AC1, Canteen near classrooms providing wide range of food
+2,AC2,22.337759, 114.172006, AC1, In the AC2 canteen you can many kinds of different cuisines. For example Vietnamese, Korean, Japanese and also western cusisine and english breakfast.
+3,AC3,22.337842, 114.172603, AC3, Canteen focused on european and italian cuisine with higher prices
+4,Dormitory Canteen, 22.339870, 114.170369, Dormitories, Cheap canteen in the area of student dormitories
