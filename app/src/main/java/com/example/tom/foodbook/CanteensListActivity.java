@@ -1,63 +1,64 @@
 package com.example.tom.foodbook;
 
-import android.app.Activity;
 import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
-public class CanteensListActivity extends ListActivity {
-    /**
-     * This class describes an individual sample (the sample title, and the activity class that
-     * demonstrates this sample).
-     */
-    private class Sample {
-        private CharSequence title;
-        private Class<? extends Activity> activityClass;
+import com.example.tom.foodbook.Adapter.OfferCanteenAdapter;
 
-        public Sample(int titleResId, Class<? extends Activity> activityClass) {
-            this.activityClass = activityClass;
-            this.title = getResources().getString(titleResId);
-        }
+import java.util.ArrayList;
 
-        @Override
-        public String toString() {
-            return title.toString();
-        }
-    }
+public class CanteensListActivity extends AppCompatActivity {
 
-    /**
-     * The collection of all samples in the app. This gets instantiated in {@link
-     * #onCreate(android.os.Bundle)} because the {@link Sample} constructor needs access to {@link
-     * android.content.res.Resources}.
-     */
-    private static Sample[] mSamples;
+    public static final String MIBA_TAG = "MIBA_TAG";
+
+    private ArrayList<Canteen> offerCanteenList;
+    private RecyclerView rvOfferCanteen;
+    private RecyclerView.LayoutManager offerCanteenLayoutManager;
+    private OfferCanteenAdapter offerCanteenAdapter;
 
 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list_of_canteens);
+
+        /* ************************************************************************************** */
+
+        //RecyclerView.ItemDecoration itemDecoration
+        rvOfferCanteen = (RecyclerView) findViewById(R.id.rv_offer_canteen);
+        rvOfferCanteen.setHasFixedSize(true);
+        offerCanteenLayoutManager = new LinearLayoutManager(this);
+        rvOfferCanteen.setLayoutManager(offerCanteenLayoutManager);
+
+        /* ************************************************************************************** */
+
+        Canteen food1 = new Canteen(1,"AC1",22.336170, 114.173159 ,"AC1","Canteen near classrooms providing wide range of food");
+        Canteen food2 = new Canteen(2,"AC2",22.336170, 114.173159 ,"ACvv1","Cxcvxanteen near classrooms providing wide range of food");
 
 
-        // Instantiate the list of samples.
-        mSamples = new Sample[]{
-//                new Sample(R.string.title_triceps_push_ups, TricepsPushUpActivity.class),
-//                new Sample(R.string.title_lat_pull_ups, LatPullUpActivity.class),
-//                new Sample(R.string.title_chin_up, BicepsPullUpActivity.class),
+        offerCanteenList = new ArrayList<>();
+        offerCanteenList.add(food1);
+        offerCanteenList.add(food2);
 
-        };
+        offerCanteenAdapter = new OfferCanteenAdapter(offerCanteenList);
+        rvOfferCanteen.setAdapter(offerCanteenAdapter);
 
-        setListAdapter(new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,
-                mSamples));
     }
 
     @Override
-    protected void onListItemClick(ListView listView, View view, int position, long id) {
-        // Launch the sample associated with this list position.
-        startActivity(new Intent(CanteensListActivity.this, mSamples[position].activityClass));
+    protected void onStart() {
+        super.onStart();
+        Log.d(MIBA_TAG, "CleverFilterActivity START");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(MIBA_TAG, "CleverFilterActivity STOP");
     }
 }
