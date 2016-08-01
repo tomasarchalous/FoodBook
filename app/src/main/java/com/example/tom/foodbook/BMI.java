@@ -32,11 +32,11 @@ public class BMI extends AppCompatActivity {
         RadioButton mode1 = (RadioButton) findViewById(R.id.mode1);
         boolean layDown = mode1.isChecked();
         RadioButton mode2 = (RadioButton) findViewById(R.id.mode2);
-        boolean slightExe = mode1.isChecked();
+        boolean slightExe = mode2.isChecked();
         RadioButton mode3 = (RadioButton) findViewById(R.id.mode3);
-        boolean normalExe = mode1.isChecked();
+        boolean normalExe = mode3.isChecked();
         RadioButton mode4 = (RadioButton) findViewById(R.id.mode4);
-        boolean heavyExe = mode1.isChecked();
+        boolean heavyExe = mode4.isChecked();
         /**
          * Underweight =<18.5
          * Normal weight = 18.5 - 24.9
