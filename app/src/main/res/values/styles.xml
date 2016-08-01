@@ -17,4 +17,8 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="button" parent="@android:style/Widget.Button">
+        <item name="com.example.tom.foodbook:fonts">fonts/blokletters_balpen.ttf</item>
+    </style>
+
 </resources>

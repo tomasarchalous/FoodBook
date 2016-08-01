@@ -10,4 +10,5 @@ public class canteen_layout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canteen_layout);
     }
+
 }
