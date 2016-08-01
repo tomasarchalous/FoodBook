@@ -1,5 +1,7 @@
 package com.example.tom.foodbook.Entity;
 
+import android.content.Context;
+
 public class Canteen {
 
     private int id;
@@ -8,6 +10,7 @@ public class Canteen {
     private double longitude;
     private String building;
     private String description;
+    public static final String IMAGE_PREFIX = "canteen_";
 
     public Canteen(int id, String name, double latitude, double longitude, String building, String description) {
         this.id = id;
@@ -16,6 +19,19 @@ public class Canteen {
         this.longitude = longitude;
         this.building = building;
         this.description = description;
+    }
+
+    public int getImageResource(Context mContext){
+        String uri = "@drawable/" + IMAGE_PREFIX + this.getId();
+        int imageResource = mContext.getResources().getIdentifier(uri, null, mContext.getPackageName());
+
+        if ( imageResource == 0 ) {
+            uri = "@drawable/photo_not_available";
+            imageResource = mContext.getResources().getIdentifier(uri, null, mContext.getPackageName());
+
+        }
+
+        return imageResource;
     }
 
     public int getId() {

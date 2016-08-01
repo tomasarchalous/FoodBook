@@ -1,11 +1,14 @@
 package com.example.tom.foodbook.Adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tom.foodbook.CsvHelper;
@@ -53,7 +56,8 @@ public class OfferCanteenAdapter  extends RecyclerView.Adapter<OfferCanteenAdapt
         holder.buildingName.setText("Building: " + canteen.getBuilding());
         holder.foodCount.setText("Number of food: " + foods.size());
 
-        System.out.println("délka" + foods.size());
+        holder.imageView.setImageResource(canteen.getImageResource(canteensListActivityContext));
+
     }
 
     @Override
@@ -73,6 +77,7 @@ public class OfferCanteenAdapter  extends RecyclerView.Adapter<OfferCanteenAdapt
         public TextView name;
         public TextView buildingName;
         public TextView foodCount;
+        public ImageView imageView;
 
 
         public ViewHolder(View itemView, ClickListener listener) {
@@ -80,6 +85,7 @@ public class OfferCanteenAdapter  extends RecyclerView.Adapter<OfferCanteenAdapt
             name = (TextView) itemView.findViewById(R.id.tv_canteen_name);
             buildingName = (TextView) itemView.findViewById(R.id.tv_building_name);
             foodCount = (TextView) itemView.findViewById(R.id.tv_food_count);
+            imageView = (ImageView) itemView.findViewById(R.id.canteenImage);
 
 
             clickListener = listener;
