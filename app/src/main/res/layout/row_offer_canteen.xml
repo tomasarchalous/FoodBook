@@ -2,12 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="?attr/selectableItemBackground">
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+
+    >
+
 
     <TextView
         android:id="@+id/tv_canteen_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+    />
+
+    <TextView
+        android:id="@+id/tv_building_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:textSize="16dp" />
+    />
+
+    <TextView
+        android:id="@+id/tv_food_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:textSize="16dp" />
+    />
 
 </LinearLayout>

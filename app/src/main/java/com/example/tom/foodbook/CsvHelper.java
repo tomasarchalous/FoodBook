@@ -1,13 +1,11 @@
 package com.example.tom.foodbook;
 
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 
+import com.example.tom.foodbook.Entity.Canteen;
 import com.example.tom.foodbook.Entity.Food;
 
-import java.io.FileReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -63,12 +61,13 @@ public class CsvHelper {
     public ArrayList<Food> getFoods() {
         ArrayList<Food> foods = new ArrayList<>();
         try {
-
+            System.out.println("zacatek načitani");
             CsvReader products = new CsvReader(new InputStreamReader(myContext.getAssets().open("food.csv")));
-
+            System.out.println("načteno");
             products.readHeaders();
 
             while (products.readRecord()) {
+                System.out.println("while");
                 int id = Integer.parseInt(products.get("id"));
                 String name = products.get("name");
                 double price = Double.parseDouble(products.get("price"));
@@ -81,9 +80,9 @@ public class CsvHelper {
                 boolean glutenFree = products.get("glutenFree") == "1" ? true : false;
                 int canteenId = Integer.parseInt(products.get("canteenId"));
 
-
+                System.out.println("while2");
                 Food food = new Food(id, name, price, calories, proteins, fats, sugar, vegetarian, vegan, glutenFree, canteenId);
-
+                System.out.println("while3");
                 foods.add(food);
 
                 System.out.println(id + ":" + name + price);
@@ -106,13 +105,26 @@ public class CsvHelper {
      * @return
      */
     public ArrayList<Food> getFoodsOfCanteen(int canteenId) {
+
+
         ArrayList<Food> foodsOfCanteen = new ArrayList<>();
         ArrayList<Food> allFoods = this.getFoods();
+      //  System.out.println("get foods of canteen" + canteenId);
         for (Food food : allFoods) {
+        //    System.out.println(food.getName());
+            System.out.println("Canteen id: " + canteenId);
+            System.out.println("Food Canteen id: " + food.getCanteenId());
             if (food.getCanteenId() == canteenId) {
                 foodsOfCanteen.add(food);
+                System.out.println("podminka ok" +food.getName());
             }
         }
+  //      System.out.println("delka:" +foodsOfCanteen.size());
+
+        for (Food food : foodsOfCanteen){
+//            System.out.println("foods of canteen list: ");
+        }
+
         return foodsOfCanteen;
     }
 
