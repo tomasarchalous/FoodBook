@@ -1,10 +1,13 @@
 package com.example.tom.foodbook;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 
 import com.example.tom.foodbook.Entity.Food;
 
+import java.io.FileReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -23,7 +26,7 @@ public class CsvHelper {
      * @return ArrayList<Canteen>
      */
     public ArrayList<Canteen> getCanteens() {
-
+        System.out.println("funkce");
         ArrayList<Canteen> canteens = new ArrayList<>();
         try {
 
@@ -35,12 +38,11 @@ public class CsvHelper {
                 int id = Integer.parseInt(products.get("id"));
                 String name = products.get("name");
 
-
                 double latitude = Double.parseDouble(products.get("latitude"));
                 double longitude = Double.parseDouble(products.get("longitude"));
                 String building = products.get("building");
                 String description = products.get("description");
-                int imageId = Integer.parseInt(products.get("id"));
+                int imageId = Integer.parseInt(products.get("imageId"));
 
                 Canteen canteen = new Canteen(id, name, latitude, longitude, building, description, imageId);
                 canteens.add(canteen);
@@ -101,7 +103,7 @@ public class CsvHelper {
     }
 
     /**
-     * Returns ArrayList of food server in canteen in input parameter
+     * Returns ArrayList of food served in desired canteen
      *
      * @param canteenId
      * @return
