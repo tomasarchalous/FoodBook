@@ -26,11 +26,11 @@
             android:name=".CleverFilterActivity"
             android:label="Clever filter of Food" />
         <activity
-            android:name=".canteen_overview"
+            android:name=".CanteenOverviewActivity"
             android:label="overview of all canteens" />
         <activity
             android:name=".canteen_layout"
-            android:label="basic layout of canteen infrmation" />
+            android:label="Basic layout of canteen information" />
         <activity
             android:name=".BMI"
             android:label="BMI calculator"></activity>

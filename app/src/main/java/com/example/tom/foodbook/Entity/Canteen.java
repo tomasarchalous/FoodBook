@@ -12,6 +12,9 @@ public class Canteen {
     private String description;
     public static final String IMAGE_PREFIX = "canteen_";
 
+    public Canteen() {
+    }
+
     public Canteen(int id, String name, double latitude, double longitude, String building, String description) {
         this.id = id;
         this.name = name;

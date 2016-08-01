@@ -1,11 +1,14 @@
 package com.example.tom.foodbook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.tom.foodbook.Adapter.OfferCanteenAdapter;
@@ -22,8 +25,6 @@ public class CanteensListActivity extends AppCompatActivity implements OfferCant
     private RecyclerView.LayoutManager offerCanteenLayoutManager;
     private OfferCanteenAdapter offerCanteenAdapter;
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,13 +40,6 @@ public class CanteensListActivity extends AppCompatActivity implements OfferCant
 
         /* ************************************************************************************** */
 
-        Canteen food1 = new Canteen(1,"AC1",22.336170, 114.173159 ,"AC1","Canteen near classrooms providing wide range of food");
-        Canteen food2 = new Canteen(2,"AC2",22.336170, 114.173159 ,"ACvv1","Cxcvxanteen near classrooms providing wide range of food");
-
-
-//        offerCanteenList = new ArrayList<>();
-//        offerCanteenList.add(food1);
-//        offerCanteenList.add(food2);
         CsvHelper csvHelper = new CsvHelper(CanteensListActivity.this);
         this.offerCanteenList = csvHelper.getCanteens();
 
@@ -57,20 +51,18 @@ public class CanteensListActivity extends AppCompatActivity implements OfferCant
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(MIBA_TAG, "CleverFilterActivity START");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(MIBA_TAG, "CleverFilterActivity STOP");
     }
 
     @Override
     public void onItemClick(int position) {
-//        Food clickedFood = offerFoodList.get(position);
-//        Toast.makeText(this, "You clicked on " + clickedFood.getName() + " !", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getBaseContext(), CanteenOverviewActivity.class);
+        intent.putExtra("canteenId", offerCanteenList.get(position).getId());
+        startActivity(intent);
 
-        Toast.makeText(this, offerCanteenList.get(position).getName(), Toast.LENGTH_SHORT).show();
     }
 }
