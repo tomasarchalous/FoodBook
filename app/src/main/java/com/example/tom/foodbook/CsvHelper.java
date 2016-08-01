@@ -1,13 +1,11 @@
 package com.example.tom.foodbook;
 
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 
+import com.example.tom.foodbook.Entity.Canteen;
 import com.example.tom.foodbook.Entity.Food;
 
-import java.io.FileReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -44,7 +42,7 @@ public class CsvHelper {
                 Canteen canteen = new Canteen(id, name, latitude, longitude, building, description);
                 canteens.add(canteen);
 
-                System.out.println(id + ":" + name);
+               // System.out.println(id + ":" + name);
             }
 
             products.close();
@@ -63,9 +61,7 @@ public class CsvHelper {
     public ArrayList<Food> getFoods() {
         ArrayList<Food> foods = new ArrayList<>();
         try {
-
             CsvReader products = new CsvReader(new InputStreamReader(myContext.getAssets().open("food.csv")));
-
             products.readHeaders();
 
             while (products.readRecord()) {
@@ -81,12 +77,10 @@ public class CsvHelper {
                 boolean glutenFree = products.get("glutenFree") == "1" ? true : false;
                 int canteenId = Integer.parseInt(products.get("canteenId"));
 
-
                 Food food = new Food(id, name, price, calories, proteins, fats, sugar, vegetarian, vegan, glutenFree, canteenId);
-
                 foods.add(food);
 
-                System.out.println(id + ":" + name + price);
+              //  System.out.println(id + ":" + name + price);
             }
 
             products.close();
@@ -106,6 +100,8 @@ public class CsvHelper {
      * @return
      */
     public ArrayList<Food> getFoodsOfCanteen(int canteenId) {
+
+
         ArrayList<Food> foodsOfCanteen = new ArrayList<>();
         ArrayList<Food> allFoods = this.getFoods();
         for (Food food : allFoods) {
@@ -113,6 +109,7 @@ public class CsvHelper {
                 foodsOfCanteen.add(food);
             }
         }
+
         return foodsOfCanteen;
     }
 
