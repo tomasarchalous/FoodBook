@@ -42,7 +42,7 @@ public class CsvHelper {
                 Canteen canteen = new Canteen(id, name, latitude, longitude, building, description);
                 canteens.add(canteen);
 
-               // System.out.println(id + ":" + name);
+                // System.out.println(id + ":" + name);
             }
 
             products.close();
@@ -80,7 +80,7 @@ public class CsvHelper {
                 Food food = new Food(id, name, price, calories, proteins, fats, sugar, vegetarian, vegan, glutenFree, canteenId);
                 foods.add(food);
 
-              //  System.out.println(id + ":" + name + price);
+                //  System.out.println(id + ":" + name + price);
             }
 
             products.close();
@@ -111,6 +111,22 @@ public class CsvHelper {
         }
 
         return foodsOfCanteen;
+    }
+
+    public Canteen getCanteenByID(int id) {
+        Canteen canteen = new Canteen();
+        ArrayList<Canteen> canteens = this.getCanteens();
+
+
+        for (Canteen c : canteens) {
+            if (c.getId() == id) {
+                canteen = c;
+            }
+        }
+
+
+
+        return canteen;
     }
 
 }

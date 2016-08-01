@@ -1,11 +1,14 @@
 package com.example.tom.foodbook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.tom.foodbook.Adapter.OfferCanteenAdapter;
@@ -68,9 +71,11 @@ public class CanteensListActivity extends AppCompatActivity implements OfferCant
 
     @Override
     public void onItemClick(int position) {
-//        Food clickedFood = offerFoodList.get(position);
-//        Toast.makeText(this, "You clicked on " + clickedFood.getName() + " !", Toast.LENGTH_SHORT).show();
-
         Toast.makeText(this, offerCanteenList.get(position).getName(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getBaseContext(), CanteenOverviewActivity.class);
+        intent.putExtra("canteenId", offerCanteenList.get(position).getId());
+        startActivity(intent);
+
     }
 }
