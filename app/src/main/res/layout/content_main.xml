@@ -19,6 +19,12 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
         android:text="FoodBook" />
+    <Button
+        android:id="@+id/btnListOfCanteens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Canteens" />
+
 
     <Button
         android:id="@+id/btnCleverFilter"
@@ -31,10 +37,5 @@
         android:layout_height="wrap_content"
         android:text="Recommended Values"/>
 
-    <Button
-        android:id="@+id/btnListOfCanteens"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="List of Canteens" />
 
 </LinearLayout>

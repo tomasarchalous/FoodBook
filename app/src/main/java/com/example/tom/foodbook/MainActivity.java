@@ -21,7 +21,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvDashboard;
-    private Button btnCleverFitler;
+    private Button btnCleverFitler,btnCalculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
 //        csvHelper.getFoods();
 
         csvHelper.getFoodsOfCanteen(2);
+
+        btnCalculator = (Button) findViewById(R.id.recommendValues);
+        btnCalculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), BMI.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
