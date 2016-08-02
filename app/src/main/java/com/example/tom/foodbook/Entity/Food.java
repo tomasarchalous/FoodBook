@@ -1,5 +1,7 @@
 package com.example.tom.foodbook.Entity;
 
+import android.content.Context;
+
 public class Food {
 
     private int id;
@@ -14,6 +16,7 @@ public class Food {
     private boolean glutenFree;
     private int canteenId;
     private boolean markFlag;
+    public static final String FOOD_PREFIX = "food_";
 
     public Food(int id, String name, double price, int calories, int proteins, int fats, int sugar, boolean vegetarian, boolean vegan, boolean glutenFree, int canteenId) {
         this.id = id;
@@ -133,4 +136,18 @@ public class Food {
     public void setMarkFlag(boolean markFlag) {
         this.markFlag = markFlag;
     }
+
+    public int getImageResource(Context mContext){
+        String uri = "@drawable/" + FOOD_PREFIX + this.getId();
+        int imageResource = mContext.getResources().getIdentifier(uri, null, mContext.getPackageName());
+
+        if ( imageResource == 0 ) {
+            uri = "@drawable/photo_not_available";
+            imageResource = mContext.getResources().getIdentifier(uri, null, mContext.getPackageName());
+
+        }
+
+        return imageResource;
+    }
+
 }

@@ -52,6 +52,8 @@
 </LinearLayout>
 
         <ImageView
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
             android:id="@+id/canteenImage"
             android:layout_width="100dp"
             android:layout_height="70dp"

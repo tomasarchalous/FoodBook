@@ -3,15 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="5dp">
 
- <TextView
-     android:id="@+id/tv_food_name"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:text=""
 
-     />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_weight="4"
+        android:gravity="left"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_food_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Food Name"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tv_food_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Food Calories"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_food_calories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Food Calories"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="60dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/food_1" />
 
 
 </LinearLayout>

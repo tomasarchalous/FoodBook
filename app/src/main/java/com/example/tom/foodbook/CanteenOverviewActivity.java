@@ -73,7 +73,7 @@ public class CanteenOverviewActivity extends AppCompatActivity implements OfferF
         /* ************************************************************************************** */
 
         CsvHelper csvHelper = new CsvHelper(CanteenOverviewActivity.this);
-        this.offerFoodList = csvHelper.getFoods();
+        this.offerFoodList = csvHelper.getFoodsOfCanteen(canteen.getId());
 
         offerFoodAdapter = new OfferFoodCompactAdapter(offerFoodList, CanteenOverviewActivity.this, this);
         rvOfferFood.setAdapter(offerFoodAdapter);

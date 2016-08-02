@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tom.foodbook.Entity.Food;
@@ -50,9 +51,10 @@ public class OfferFoodCompactAdapter extends RecyclerView.Adapter<OfferFoodCompa
     public void onBindViewHolder(ViewHolder holder, int position) {
         Food food = foodList.get(position);
 
-   holder.name.setText(food.getName());
-//        holder.calories.setText(food.getCalories() + " kCal");
-//        holder.price.setText("Price: " + food.getPrice() + " HKD");
+        holder.name.setText(food.getName());
+        holder.calories.setText(food.getCalories() + " kCal");
+        holder.imageView.setImageResource(food.getImageResource(canteensListActivityContext));
+        holder.price.setText("Price: " + food.getProteins() + " HKD");
 //        holder.proteins.setText("Proteins: " + food.getProteins() + " g");
 //        holder.fat.setText("Fats: " + food.getFats() + " g");
 //        holder.sugar.setText("Sugar: " + food.getSugar() + " g");
@@ -72,15 +74,17 @@ public class OfferFoodCompactAdapter extends RecyclerView.Adapter<OfferFoodCompa
 
         private ViewHolder.ClickListener clickListener;
         private TextView name, price, calories, fat, sugar, proteins;
+        private ImageView imageView;
 
         public ViewHolder(View itemView, ClickListener listener) {
             super(itemView);
-           name = (TextView) itemView.findViewById(R.id.tv_food_name);
-//            price = (TextView) itemView.findViewById(R.id.tv_food_price);
-//            calories = (TextView) itemView.findViewById(R.id.tv_food_calories);
+            name = (TextView) itemView.findViewById(R.id.tv_food_name);
+            price = (TextView) itemView.findViewById(R.id.tv_food_price);
+            calories = (TextView) itemView.findViewById(R.id.tv_food_calories);
 //            proteins = (TextView) itemView.findViewById(R.id.tv_food_proteins);
 //            fat = (TextView) itemView.findViewById(R.id.tv_food_fats);
 //            sugar = (TextView) itemView.findViewById(R.id.tv_food_sugar);
+            imageView = (ImageView) itemView.findViewById(R.id.iv_image);
 
             clickListener = listener;
             itemView.setOnClickListener(this);

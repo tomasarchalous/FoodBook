@@ -80,7 +80,13 @@ public class CsvHelper {
                 Food food = new Food(id, name, price, calories, proteins, fats, sugar, vegetarian, vegan, glutenFree, canteenId);
                 foods.add(food);
 
-                //  System.out.println(id + ":" + name + price);
+                System.out.println("ID: " + id);
+                System.out.println("Name: " + name);
+                System.out.println("price: " + price);
+                System.out.println("calories: " + calories);
+                System.out.println("proteins: " + proteins);
+                System.out.println("fats: " + fats);
+                System.out.println("sugar: " + sugar);
             }
 
             products.close();
@@ -123,7 +129,6 @@ public class CsvHelper {
                 canteen = c;
             }
         }
-
 
 
         return canteen;
