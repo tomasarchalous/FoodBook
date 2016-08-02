@@ -32,6 +32,9 @@ public class Food {
         this.canteenId = canteenId;
     }
 
+    public Food() {
+    }
+
     public Food(String name, double price, int calories, int proteins, int fats, int sugar) {
         this.name = name;
         this.price = price;
@@ -137,11 +140,11 @@ public class Food {
         this.markFlag = markFlag;
     }
 
-    public int getImageResource(Context mContext){
+    public int getImageResource(Context mContext) {
         String uri = "@drawable/" + FOOD_PREFIX + this.getId();
         int imageResource = mContext.getResources().getIdentifier(uri, null, mContext.getPackageName());
 
-        if ( imageResource == 0 ) {
+        if (imageResource == 0) {
             uri = "@drawable/photo_not_available";
             imageResource = mContext.getResources().getIdentifier(uri, null, mContext.getPackageName());
 

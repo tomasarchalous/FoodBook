@@ -84,6 +84,9 @@ public class CanteenOverviewActivity extends AppCompatActivity implements OfferF
 
     @Override
     public void onItemClick(int position) {
+        Intent intent = new Intent(getBaseContext(), FoodOverviewActivity.class);
+        intent.putExtra("foodId", offerFoodList.get(position).getId());
+        startActivity(intent);
 
     }
 }

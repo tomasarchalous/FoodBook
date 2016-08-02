@@ -80,13 +80,13 @@ public class CsvHelper {
                 Food food = new Food(id, name, price, calories, proteins, fats, sugar, vegetarian, vegan, glutenFree, canteenId);
                 foods.add(food);
 
-                System.out.println("ID: " + id);
-                System.out.println("Name: " + name);
-                System.out.println("price: " + price);
-                System.out.println("calories: " + calories);
-                System.out.println("proteins: " + proteins);
-                System.out.println("fats: " + fats);
-                System.out.println("sugar: " + sugar);
+//                System.out.println("ID: " + id);
+//                System.out.println("Name: " + name);
+//                System.out.println("price: " + price);
+//                System.out.println("calories: " + calories);
+//                System.out.println("proteins: " + proteins);
+//                System.out.println("fats: " + fats);
+//                System.out.println("sugar: " + sugar);
             }
 
             products.close();
@@ -123,15 +123,27 @@ public class CsvHelper {
         Canteen canteen = new Canteen();
         ArrayList<Canteen> canteens = this.getCanteens();
 
-
         for (Canteen c : canteens) {
             if (c.getId() == id) {
                 canteen = c;
             }
         }
 
-
         return canteen;
+    }
+
+    public Food getFoodById(int id) {
+        System.out.println("getfood:" + id);
+        Food food = new Food();
+        ArrayList<Food> foods = this.getFoods();
+
+        for (Food f : foods) {
+            if (f.getId() == id) {
+                food = f;
+            }
+        }
+        System.out.println("načteno:" + food.getName());
+        return food;
     }
 
 }

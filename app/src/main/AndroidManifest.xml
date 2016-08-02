@@ -33,6 +33,9 @@
             android:name=".CanteenOverviewActivity"
             android:label="overview of all canteens" />
         <activity
+            android:name=".FoodOverviewActivity"
+            android:label="overview of all canteens" />
+        <activity
             android:name=".BMI"
             android:label="BMI calculator" />
     </application>
