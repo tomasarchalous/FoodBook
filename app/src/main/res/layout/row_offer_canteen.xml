@@ -10,60 +10,70 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
 
-        >
+        <RelativeLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
 
+                >
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+                <TextView
+                    android:id="@+id/tv_canteen_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily=""
+                    android:text="Test"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+                />
 
-    >
+                <TextView
+                    android:id="@+id/tv_building_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Test"
+                    android:textSize="16dp" />
+                />
 
-    <TextView
-        android:id="@+id/tv_canteen_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:fontFamily=""
-        />
-    />
+                <TextView
+                    android:id="@+id/tv_food_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Test"
+                    android:textSize="16dp" />
+                />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_building_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test"
-        android:textSize="16dp" />
-    />
+            <ImageView
+                android:id="@+id/canteenImage"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/photo_not_available" />
 
-    <TextView
-        android:id="@+id/tv_food_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test"
-        android:textSize="16dp" />
-    />
-</LinearLayout>
+        </RelativeLayout>
 
-        <ImageView
-            android:layout_margin="5dp"
-            android:scaleType="centerCrop"
-            android:id="@+id/canteenImage"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:src="@drawable/photo_not_available"
-
-            android:layout_alignParentRight="true"
-            />
-
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/darker_gray" />
 
     </RelativeLayout>
+
 
 </LinearLayout>
