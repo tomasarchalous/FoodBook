@@ -14,6 +14,7 @@
         app:cardCornerRadius="5dp">
 
         <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/srl_offer_food_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -218,6 +219,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Graphical representaion" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pc_nutrition_values"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+            </com.github.mikephil.charting.charts.PieChart>
 
         </LinearLayout>
 
