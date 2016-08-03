@@ -55,9 +55,6 @@ public class OfferFoodCompactAdapter extends RecyclerView.Adapter<OfferFoodCompa
         holder.calories.setText(food.getCalories() + " kCal");
         holder.imageView.setImageResource(food.getImageResource(canteensListActivityContext));
         holder.price.setText("Price: " + food.getPrice() + "HK$");
-//        holder.proteins.setText("Proteins: " + food.getProteins() + " g");
-//        holder.fat.setText("Fats: " + food.getFats() + " g");
-//        holder.sugar.setText("Sugar: " + food.getSugar() + " g");
     }
 
     @Override
@@ -81,9 +78,6 @@ public class OfferFoodCompactAdapter extends RecyclerView.Adapter<OfferFoodCompa
             name = (TextView) itemView.findViewById(R.id.tv_food_name);
             price = (TextView) itemView.findViewById(R.id.tv_food_price);
             calories = (TextView) itemView.findViewById(R.id.tv_food_calories);
-//            proteins = (TextView) itemView.findViewById(R.id.tv_food_proteins);
-//            fat = (TextView) itemView.findViewById(R.id.tv_food_fats);
-//            sugar = (TextView) itemView.findViewById(R.id.tv_food_sugar);
             imageView = (ImageView) itemView.findViewById(R.id.iv_image);
 
             clickListener = listener;

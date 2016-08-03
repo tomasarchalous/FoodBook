@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,12 @@ public class OfferCanteenAdapter  extends RecyclerView.Adapter<OfferCanteenAdapt
     private List<Canteen> canteenList;
     Context canteensListActivityContext;
 
-
+    public void setData(List<Canteen> canteenList) {
+        Log.d(MIBA_TAG, "OfferFoodAdapter => setData: " + canteenList);
+        this.canteenList.clear();
+        this.canteenList.addAll(canteenList);
+        notifyDataSetChanged();
+    }
 
     public OfferCanteenAdapter(List<Canteen> canteenList, Context canteensListActivityContext,  ViewHolder.ClickListener clickListener) {
         this.canteenList = canteenList;

@@ -16,6 +16,7 @@ import com.example.tom.foodbook.Adapter.OfferCanteenAdapter;
 import com.example.tom.foodbook.Entity.Canteen;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CanteensListActivity extends AppCompatActivity implements OfferCanteenAdapter.ViewHolder.ClickListener {
 
@@ -48,10 +49,20 @@ public class CanteensListActivity extends AppCompatActivity implements OfferCant
         offerCanteenAdapter = new OfferCanteenAdapter(offerCanteenList, CanteensListActivity.this, this);
         rvOfferCanteen.setAdapter(offerCanteenAdapter);
 
+
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.srl_list_of_canteens);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                CsvHelper csvHelper = new CsvHelper(CanteensListActivity.this);
+
+                ArrayList<Canteen> canteensTest = csvHelper.getCanteens();
+
+                offerCanteenAdapter.setData(canteensTest);
+
+                Toast toast = Toast.makeText(getApplicationContext(), "List of canteens updated", Toast.LENGTH_SHORT);
+                toast.show();
+
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
