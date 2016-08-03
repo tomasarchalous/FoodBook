@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,24 +15,78 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/iv_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/food_1"
                 android:scaleType="centerCrop"
-                />
+                android:src="@drawable/food_1" />
 
             <TextView
                 android:id="@+id/tv_food_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Food name"
-                android:textSize="40dp"
+                android:textSize="35dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
                 />
+
+            <TextView
+                android:id="@+id/tv_food_price"
+                style="@style/food_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food name" />
+            <TextView
+                android:id="@+id/tv_food_calories"
+                style="@style/food_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food name" />
+            <TextView
+                android:id="@+id/tv_food_proteins"
+                style="@style/food_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food name" />
+            <TextView
+                android:id="@+id/tv_food_fats"
+                style="@style/food_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food name" />
+            <TextView
+                android:id="@+id/tv_food_sugar"
+                style="@style/food_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food name" />
+
+            <TextView
+                android:id="@+id/tv_food_vegetarian"
+                style="@style/food_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food name" />
+
+
+            <TextView
+                android:id="@+id/tv_food_vegan"
+                style="@style/food_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food name" />
+
+
+            <TextView
+                android:id="@+id/tv_food_gluten_free"
+                style="@style/food_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food name" />
 
         </LinearLayout>
 

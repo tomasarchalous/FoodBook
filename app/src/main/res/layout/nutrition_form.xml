@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     android:orientation="vertical"
-    android:padding="10dp"
-    android:gravity="center">
+    android:background="@drawable/rabbit">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,9 +15,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="right"
+            android:gravity="center_horizontal"
             android:text="Proteins: "
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            style="@style/tag"/>
 
         <EditText
             android:id="@+id/et_given_proteins"
@@ -40,9 +41,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="right"
+            android:gravity="center_horizontal"
             android:text="Fats: "
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            style="@style/tag"/>
 
         <EditText
             android:id="@+id/et_given_fats"
@@ -64,9 +66,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="right"
+            android:gravity="center_horizontal"
             android:text="Sugar: "
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            style="@style/tag"/>
 
         <EditText
             android:id="@+id/et_given_sugar"
@@ -79,7 +82,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
@@ -87,13 +90,19 @@
             android:id="@+id/btn_storno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Storno"/>
+            android:text="Storno"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="64dp"
+            android:background="@drawable/button1"/>
 
         <Button
             android:id="@+id/btn_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OK"/>
+            android:text="OK"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="84dp"
+            android:background="@drawable/button1"/>
 
     </LinearLayout>
 

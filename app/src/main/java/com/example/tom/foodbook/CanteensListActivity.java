@@ -3,6 +3,7 @@ package com.example.tom.foodbook;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +24,7 @@ public class CanteensListActivity extends AppCompatActivity implements OfferCant
     private ArrayList<Canteen> offerCanteenList;
     private RecyclerView rvOfferCanteen;
     private RecyclerView.LayoutManager offerCanteenLayoutManager;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private OfferCanteenAdapter offerCanteenAdapter;
 
     @Override
@@ -45,6 +47,14 @@ public class CanteensListActivity extends AppCompatActivity implements OfferCant
 
         offerCanteenAdapter = new OfferCanteenAdapter(offerCanteenList, CanteensListActivity.this, this);
         rvOfferCanteen.setAdapter(offerCanteenAdapter);
+
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.srl_list_of_canteens);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
     }
 
