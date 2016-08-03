@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#FFFFFF"
+    android:background="@drawable/watermelon_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.tom.foodbook.MainActivity"
     tools:showIn="@layout/activity_main">
@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="center"
+        android:layout_marginTop="16dp"
         android:src="@drawable/logo"/>
     <TextView
         android:id="@+id/tvDashboard"
@@ -39,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="List of Canteens"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/button1"/>
 
     <Button
@@ -48,14 +49,14 @@
         android:layout_height="wrap_content"
         android:text="Run Clever filter"
         android:background="@drawable/button1"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="28dp"/>
 
     <Button
         android:id="@+id/recommendValues"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Recommended Values"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/button1"/>
 </LinearLayout>
 
