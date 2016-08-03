@@ -44,6 +44,8 @@ public class CleverFilterActivity extends AppCompatActivity implements OfferFood
     private PieChart pcNutritionValues;
     private Typeface tf;
 
+    private CsvHelper csvHelper;
+
     private int proteinsSum = 0;
     private int fatsSum = 0;
     private int sugarSum = 0;
@@ -79,6 +81,10 @@ public class CleverFilterActivity extends AppCompatActivity implements OfferFood
         offerFoodList.add(food4);
         offerFoodList.add(food5);
 
+        csvHelper = new CsvHelper(getBaseContext());
+        offerFoodList.clear();
+        offerFoodList.addAll(csvHelper.getFoods());
+
         offerFoodAdapter = new OfferFoodAdapter(offerFoodList, this);
         rvOfferFood.setAdapter(offerFoodAdapter);
 
@@ -90,6 +96,7 @@ public class CleverFilterActivity extends AppCompatActivity implements OfferFood
             public void onRefresh() {
                 Log.d(MIBA_TAG, "▲ REFRESH");
                 setpcNutritionValuesData(nutritionValueList);
+                offerFoodAdapter.setData(csvHelper.getFoods());
                 srlOfferFoodList.setRefreshing(false);
             }
         });
