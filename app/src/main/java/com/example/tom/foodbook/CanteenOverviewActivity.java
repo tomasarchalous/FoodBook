@@ -1,7 +1,9 @@
 package com.example.tom.foodbook;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +21,7 @@ import com.example.tom.foodbook.Entity.Food;
 
 import java.util.ArrayList;
 
-public class CanteenOverviewActivity extends AppCompatActivity implements OfferFoodCompactAdapter.ViewHolder.ClickListener {
+public class CanteenOverviewActivity extends Activity implements OfferFoodCompactAdapter.ViewHolder.ClickListener {
 
     private Canteen canteen;
     private CsvHelper csvHelper;
@@ -30,7 +32,7 @@ public class CanteenOverviewActivity extends AppCompatActivity implements OfferF
     private RecyclerView rvOfferFood;
     private RecyclerView.LayoutManager offerFoodLayoutManager;
     private OfferFoodCompactAdapter offerFoodAdapter;
-
+    private SwipeRefreshLayout swipeRefreshLayout;
 
 
     @Override
@@ -78,7 +80,13 @@ public class CanteenOverviewActivity extends AppCompatActivity implements OfferF
         offerFoodAdapter = new OfferFoodCompactAdapter(offerFoodList, CanteenOverviewActivity.this, this);
         rvOfferFood.setAdapter(offerFoodAdapter);
 
-
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.srl_list_of_foods);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
     }
 

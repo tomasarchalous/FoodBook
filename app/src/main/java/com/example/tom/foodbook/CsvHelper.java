@@ -72,10 +72,13 @@ public class CsvHelper {
                 int proteins = Integer.parseInt(products.get("proteins"));
                 int fats = Integer.parseInt(products.get("fats"));
                 int sugar = Integer.parseInt(products.get("sugar"));
-                boolean vegetarian = products.get("vegetarian") == "1" ? true : false;
-                boolean vegan = products.get("vegan") == "1" ? true : false;
-                boolean glutenFree = products.get("glutenFree") == "1" ? true : false;
+                boolean vegetarian = Integer.parseInt(products.get("vegetarian")) == 1 ? true : false;
+                boolean vegan = Integer.parseInt(products.get("vegan")) == 1 ? true : false;
+                boolean glutenFree = Integer.parseInt(products.get("glutenFree")) == 1 ? true : false;
                 int canteenId = Integer.parseInt(products.get("canteenId"));
+
+               // System.out.println(products.get("name") + "Veget" + products.get("vegetarian")+ vegetarian);
+
 
                 Food food = new Food(id, name, price, calories, proteins, fats, sugar, vegetarian, vegan, glutenFree, canteenId);
                 foods.add(food);
@@ -133,7 +136,7 @@ public class CsvHelper {
     }
 
     public Food getFoodById(int id) {
-        System.out.println("getfood:" + id);
+      //  System.out.println("getfood:" + id);
         Food food = new Food();
         ArrayList<Food> foods = this.getFoods();
 
@@ -142,7 +145,7 @@ public class CsvHelper {
                 food = f;
             }
         }
-        System.out.println("načteno:" + food.getName());
+     //   System.out.println("načteno:" + food.getName());
         return food;
     }
 
