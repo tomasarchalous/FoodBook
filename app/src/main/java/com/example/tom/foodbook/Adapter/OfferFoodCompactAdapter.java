@@ -54,7 +54,7 @@ public class OfferFoodCompactAdapter extends RecyclerView.Adapter<OfferFoodCompa
         holder.name.setText(food.getName());
         holder.calories.setText(food.getCalories() + " kCal");
         holder.imageView.setImageResource(food.getImageResource(canteensListActivityContext));
-        holder.price.setText("Price: " + food.getProteins() + " HKD");
+        holder.price.setText("Price: " + food.getPrice() + "HK$");
 //        holder.proteins.setText("Proteins: " + food.getProteins() + " g");
 //        holder.fat.setText("Fats: " + food.getFats() + " g");
 //        holder.sugar.setText("Sugar: " + food.getSugar() + " g");
