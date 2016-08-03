@@ -84,6 +84,15 @@ public class CanteenOverviewActivity extends Activity implements OfferFoodCompac
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                CsvHelper csvHelper = new CsvHelper(CanteenOverviewActivity.this);
+
+                ArrayList<Food> foods = csvHelper.getFoodsOfCanteen(canteen.getId());
+
+                offerFoodAdapter.setData(foods);
+
+                Toast toast = Toast.makeText(getApplicationContext(), "List of foods updated", Toast.LENGTH_SHORT);
+                toast.show();
+
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
